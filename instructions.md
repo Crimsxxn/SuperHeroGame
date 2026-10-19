@@ -8,17 +8,40 @@ Complete the Superhero game by following the steps below (the steps are also lis
 Your output be similar to the following to pass the input / output test:
 
 ```
-Superhero details
-    name: Spiderman
-    costume: Red suit
-    weapon: Super Web
-    life: true
-    weapon strength: 0
+public class Superhero {
+    private String name;
+    private String costume;
+    private String weapon;
+    private boolean life;
+    private int weaponStrength;
 
-Superhero details
-    name: Batman
-    costume: Batsuit
-    weapon: Super Strength
-    life: false
-    weapon strength: 0
+    // Constructor with name, costume, and weapon (defaults life to true, weaponStrength to 0)
+    public Superhero(String name, String costume, String weapon) {
+        this.name = name;
+        this.costume = costume;
+        this.weapon = weapon;
+        this.life = true;
+        this.weaponStrength = 0;
+    }
+
+    // Overloaded constructor if other parameters (like life and weapon strength) are passed
+    public Superhero(String name, String costume, String weapon, boolean life, int weaponStrength) {
+        this.name = name;
+        this.costume = costume;
+        this.weapon = weapon;
+        this.life = life;
+        this.weaponStrength = weaponStrength;
+    }
+
+    // toString() method matching the required output format
+    @Override
+    public String toString() {
+        return "superhero details\n" +
+               "name: " + name + "\n" +
+               "costume: " + costume + "\n" +
+               "weapon: " + weapon + "\n" +
+               "life: " + life + "\n" +
+               "weapon strength: " + weaponStrength;
+    }
+}
 ```
